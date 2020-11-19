@@ -1,0 +1,57 @@
+<mvc:View controllerName="fin_transporte.fin_transporte.controller.View1" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:card="sap.f.cards">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<l:VerticalLayout class="sapUiContentPadding" width="100%">
+							<Label class="title" text="INGRESE N° DE TRANSPORTE" labelFor="input-a"/>
+							<SearchField maxLength="10" id="searchShipment" search="onSearch" placeholder="Buscar ">
+								<layoutData><OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+							</SearchField>
+							<f:Card>
+								<f:layoutData>
+									<f:GridContainerItemLayoutData columns="4"/>
+								</f:layoutData>
+								<f:header>
+									<card:Header id ="Header" class="haeadOut" title="" subtitle="" iconSrc="sap-icon://employee" press="onPress"/>
+								</f:header>
+								<f:content>
+									<VBox class="outputData" renderType="Bare" justifyContent="SpaceBetween">
+										<HBox justifyContent="SpaceBetween">
+											<ObjectStatus id="carrier" class="itemsList" title="{i18n>transportista}" text="" active="true" state="Information"
+												press="handleStatusPressed"/>
+										</HBox>
+										<HBox justifyContent="SpaceBetween">
+											<ObjectStatus id="truckPlate" class="itemsList" title="{i18n>chapaCamion}" text="" active="true" state="Information"
+												press="handleStatusPressed"/>
+										</HBox>
+										<HBox justifyContent="SpaceBetween">
+											<ObjectStatus id="semiPlate" class="itemsList" title="{i18n>chapaSemi}" text="" active="true" state="Information"
+												press="handleStatusPressed"/>
+										</HBox>
+										<HBox justifyContent="SpaceBetween">
+											<ObjectStatus id="executionDate" class="itemsList" title="{i18n>fechaEjecucion}" text="" active="true" state="Information"
+												press="handleStatusPressed"/>
+										</HBox>
+										<HBox justifyContent="SpaceBetween">
+											<ObjectStatus id="executionHour" class="itemsList" title="{i18n>horaEjecucion}" text="" active="true" state="Information"
+												press="handleStatusPressed"/>
+										</HBox>
+									</VBox>
+								</f:content>
+							</f:Card>
+							<Label id ="endLabel" class="title" text="ACTUALIZAR TRANSPORTE" labelFor="input-b"/> 
+							<Button id="btnEnd" class="btnEnd" type="Accept" text="Fin de transporte" icon="sap-icon://bus-public-transport" press="onPress" ariaDescribedBy="accept" width="100%">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Button>
+						</l:VerticalLayout>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
